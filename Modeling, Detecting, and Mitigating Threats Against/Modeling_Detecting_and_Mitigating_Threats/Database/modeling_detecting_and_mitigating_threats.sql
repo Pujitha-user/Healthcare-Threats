@@ -325,17 +325,14 @@ CREATE TABLE IF NOT EXISTS `remote_user_clientregister_model` (
   `state` varchar(30) NOT NULL,
   `city` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `remote_user_clientregister_model`
 --
 
--- Sample test data - Replace with your own user accounts
-INSERT INTO `remote_user_clientregister_model` (`id`, `username`, `email`, `password`, `phoneno`, `country`, `state`, `city`) VALUES
-(1, 'testuser1', 'user1@example.com', 'testpassword1', '0000000000', 'Country', 'State', 'City'),
-(2, 'testuser2', 'user2@example.com', 'testpassword2', '0000000000', 'Country', 'State', 'City'),
-(3, 'testuser3', 'user3@example.com', 'testpassword3', '0000000000', 'Country', 'State', 'City');
+-- No sample data provided. Users should register through the application interface.
+-- Passwords should always be hashed using Django's password hashing utilities, never stored in plaintext.
 
 -- --------------------------------------------------------
 

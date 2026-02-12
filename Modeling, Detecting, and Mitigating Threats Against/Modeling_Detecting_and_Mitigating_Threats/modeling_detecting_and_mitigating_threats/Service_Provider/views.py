@@ -7,6 +7,7 @@ import datetime
 import xlwt
 from django.http import HttpResponse
 import numpy as np
+import os
 
 import pandas as pd
 
@@ -21,14 +22,19 @@ from Remote_User.models import ClientRegister_Model,detection_type,detection_rat
 
 
 def serviceproviderlogin(request):
+    # WARNING: This authentication mechanism is insecure and should be replaced
+    # with Django's built-in authentication system using proper password hashing,
+    # session management, and CSRF protection.
     if request.method  == "POST":
         admin = request.POST.get('username')
         password = request.POST.get('password')
-        # TODO: Replace with proper Django authentication using User model
-        # For now, credentials should be set via environment variables
-        import os
-        expected_admin = os.environ.get('ADMIN_USERNAME', 'Admin')
-        expected_password = os.environ.get('ADMIN_PASSWORD', 'Admin')
+        
+        # Credentials must be set via environment variables
+        expected_admin = os.environ.get('ADMIN_USERNAME')
+        expected_password = os.environ.get('ADMIN_PASSWORD')
+        
+        if not expected_admin or not expected_password:
+            raise ValueError("ADMIN_USERNAME and ADMIN_PASSWORD environment variables must be set")
         
         if admin == expected_admin and password == expected_password:
             detection_accuracy.objects.all().delete()
