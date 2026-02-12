@@ -3,11 +3,13 @@ from django.db.models import  Count, Avg
 from django.shortcuts import render, redirect
 from django.db.models import Count
 from django.db.models import Q
+from django.conf import settings
 import datetime
 import xlwt
 from django.http import HttpResponse
 import numpy as np
 import os
+import secrets
 
 import pandas as pd
 
@@ -29,14 +31,11 @@ def serviceproviderlogin(request):
         admin = request.POST.get('username')
         password = request.POST.get('password')
         
-        # Credentials must be set via environment variables
-        expected_admin = os.environ.get('ADMIN_USERNAME')
-        expected_password = os.environ.get('ADMIN_PASSWORD')
+        # Use timing-attack-resistant comparison
+        username_match = secrets.compare_digest(admin, settings.ADMIN_USERNAME)
+        password_match = secrets.compare_digest(password, settings.ADMIN_PASSWORD)
         
-        if not expected_admin or not expected_password:
-            raise ValueError("ADMIN_USERNAME and ADMIN_PASSWORD environment variables must be set")
-        
-        if admin == expected_admin and password == expected_password:
+        if username_match and password_match:
             detection_accuracy.objects.all().delete()
             return redirect('View_Remote_Users')
 
