@@ -3,10 +3,12 @@ from django.db.models import  Count, Avg
 from django.shortcuts import render, redirect
 from django.db.models import Count
 from django.db.models import Q
+from django.conf import settings
 import datetime
 import xlwt
 from django.http import HttpResponse
 import numpy as np
+import secrets
 
 import pandas as pd
 
@@ -21,10 +23,22 @@ from Remote_User.models import ClientRegister_Model,detection_type,detection_rat
 
 
 def serviceproviderlogin(request):
+    # WARNING: This authentication mechanism is insecure and should be replaced
+    # with Django's built-in authentication system using proper password hashing,
+    # session management, and CSRF protection.
     if request.method  == "POST":
-        admin = request.POST.get('username')
-        password = request.POST.get('password')
-        if admin == "Admin" and password =="Admin":
+        admin = request.POST.get('username', '')
+        password = request.POST.get('password', '')
+        
+        # Validate inputs before comparison
+        if not admin or not password:
+            return render(request,'SProvider/serviceproviderlogin.html')
+        
+        # Use timing-attack-resistant comparison
+        username_match = secrets.compare_digest(admin, settings.ADMIN_USERNAME)
+        password_match = secrets.compare_digest(password, settings.ADMIN_PASSWORD)
+        
+        if username_match and password_match:
             detection_accuracy.objects.all().delete()
             return redirect('View_Remote_Users')
 
