@@ -1,0 +1,112 @@
+================================================================================
+DJANGO PROJECT - QUICK START GUIDE
+================================================================================
+
+PROJECT: Modeling, Detecting, and Mitigating Threats Against Healthcare
+
+================================================================================
+METHOD 1: EASIEST - Double Click Batch File
+================================================================================
+
+1. Simply double-click on:
+   C:\Modeling\START_PROJECT.bat
+
+2. Server will start automatically at: http://127.0.0.1:8000/
+
+3. Press Ctrl+C to stop the server when done
+
+================================================================================
+METHOD 2: Using Command Prompt (CMD)
+================================================================================
+
+1. Open Command Prompt (cmd)
+
+2. Run these commands:
+
+   cd C:\Modeling
+   env\Scripts\activate.bat
+   cd "Modeling, Detecting, and Mitigating Threats Against\Modeling_Detecting_and_Mitigating_Threats\modeling_detecting_and_mitigating_threats"
+   python run_server_new.py
+
+3. Server will start at: http://127.0.0.1:8000/
+
+================================================================================
+METHOD 3: Using PowerShell
+================================================================================
+
+1. Open PowerShell
+
+2. Run these commands:
+
+   cd C:\Modeling
+   .\env\Scripts\Activate.ps1
+   cd "Modeling, Detecting, and Mitigating Threats Against\Modeling_Detecting_and_Mitigating_Threats\modeling_detecting_and_mitigating_threats"
+   & "C:\Modeling\env\Scripts\python.exe" run_server_new.py
+
+3. Server will start at: http://127.0.0.1:8000/
+
+================================================================================
+LOGIN CREDENTIALS
+================================================================================
+
+DATABASE CREDENTIALS:
+-------------------
+Host: 127.0.0.1
+Port: 3306
+Database: modeling_detecting_and_mitigating_threats
+Username: root
+Password: Root@123
+
+SERVICE PROVIDER LOGIN:
+---------------------
+URL: http://127.0.0.1:8000/serviceproviderlogin/
+Username: Admin
+Password: Admin
+
+REMOTE USER ACCOUNTS (Already Registered):
+-----------------------------------------
+1. Username: Rajesh
+   Password: Rajesh
+   Email: Rajesh123@gmail.com
+
+2. Username: Manjunath
+   Password: Manjunath
+   Email: tmksmanju13@gmail.com
+
+3. Username: tmksmanju
+   Password: tmksmanju
+   Email: tmksmanju13@gmail.com
+
+================================================================================
+IMPORTANT NOTES
+================================================================================
+
+1. Make sure MySQL is running before starting the Django server
+
+2. The virtual environment is located at: C:\Modeling\env\
+
+3. Always activate the virtual environment before running Django commands
+
+4. The project files are in:
+   C:\Modeling\Modeling, Detecting, and Mitigating Threats Against\
+   Modeling_Detecting_and_Mitigating_Threats\modeling_detecting_and_mitigating_threats\
+
+5. Press Ctrl+C in the terminal to stop the server
+
+6. Registration issue has been fixed - new users will now register successfully
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+If server doesn't start:
+- Check if MySQL is running
+- Verify database credentials in settings.py
+- Ensure virtual environment is activated
+- Check for any error messages in the terminal
+
+If you get "Python not found":
+- Always activate virtual environment first
+- Use full path: C:\Modeling\env\Scripts\python.exe
+
+================================================================================
