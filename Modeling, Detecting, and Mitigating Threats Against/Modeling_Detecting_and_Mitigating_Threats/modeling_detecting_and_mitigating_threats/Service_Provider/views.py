@@ -24,7 +24,13 @@ def serviceproviderlogin(request):
     if request.method  == "POST":
         admin = request.POST.get('username')
         password = request.POST.get('password')
-        if admin == "Admin" and password =="Admin":
+        # TODO: Replace with proper Django authentication using User model
+        # For now, credentials should be set via environment variables
+        import os
+        expected_admin = os.environ.get('ADMIN_USERNAME', 'Admin')
+        expected_password = os.environ.get('ADMIN_PASSWORD', 'Admin')
+        
+        if admin == expected_admin and password == expected_password:
             detection_accuracy.objects.all().delete()
             return redirect('View_Remote_Users')
 

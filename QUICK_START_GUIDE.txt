@@ -46,7 +46,7 @@ METHOD 3: Using PowerShell
 3. Server will start at: http://127.0.0.1:8000/
 
 ================================================================================
-LOGIN CREDENTIALS
+CONFIGURATION
 ================================================================================
 
 DATABASE CREDENTIALS:
@@ -54,28 +54,24 @@ DATABASE CREDENTIALS:
 Host: 127.0.0.1
 Port: 3306
 Database: modeling_detecting_and_mitigating_threats
-Username: root
-Password: Root@123
+Username: <DB_USERNAME>
+Password: <DB_PASSWORD>
+
+Note: Set these values in your .env file or update them in settings.py
+See .env.example for the required environment variable format.
 
 SERVICE PROVIDER LOGIN:
 ---------------------
 URL: http://127.0.0.1:8000/serviceproviderlogin/
-Username: Admin
-Password: Admin
+Username: <your-admin-username>
+Password: <your-admin-password>
 
-REMOTE USER ACCOUNTS (Already Registered):
------------------------------------------
-1. Username: Rajesh
-   Password: Rajesh
-   Email: Rajesh123@gmail.com
+Note: Create your own admin credentials during initial setup.
 
-2. Username: Manjunath
-   Password: Manjunath
-   Email: tmksmanju13@gmail.com
-
-3. Username: tmksmanju
-   Password: tmksmanju
-   Email: tmksmanju13@gmail.com
+REMOTE USER ACCOUNTS:
+--------------------
+Users need to register through the application interface.
+Use the registration form at: http://127.0.0.1:8000/
 
 ================================================================================
 IMPORTANT NOTES
@@ -101,7 +97,8 @@ TROUBLESHOOTING
 
 If server doesn't start:
 - Check if MySQL is running
-- Verify database credentials in settings.py
+- Verify database credentials in settings.py match your local database setup
+- Create a .env file based on .env.example with your actual credentials
 - Ensure virtual environment is activated
 - Check for any error messages in the terminal
 

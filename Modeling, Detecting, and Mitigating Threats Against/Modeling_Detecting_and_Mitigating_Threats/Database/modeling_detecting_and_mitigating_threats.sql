@@ -331,10 +331,11 @@ CREATE TABLE IF NOT EXISTS `remote_user_clientregister_model` (
 -- Dumping data for table `remote_user_clientregister_model`
 --
 
+-- Sample test data - Replace with your own user accounts
 INSERT INTO `remote_user_clientregister_model` (`id`, `username`, `email`, `password`, `phoneno`, `country`, `state`, `city`) VALUES
-(1, 'Rajesh', 'Rajesh123@gmail.com', 'Rajesh', '9535866270', 'India', 'Karnataka', 'Bangalore'),
-(2, 'Manjunath', 'tmksmanju13@gmail.com', 'Manjunath', '9535866270', 'India', 'Karnataka', 'Bangalore'),
-(3, 'tmksmanju', 'tmksmanju13@gmail.com', 'tmksmanju', '9535866270', 'India', 'Karnataka', 'Bangalore');
+(1, 'testuser1', 'user1@example.com', 'testpassword1', '0000000000', 'Country', 'State', 'City'),
+(2, 'testuser2', 'user2@example.com', 'testpassword2', '0000000000', 'Country', 'State', 'City'),
+(3, 'testuser3', 'user3@example.com', 'testpassword3', '0000000000', 'Country', 'State', 'City');
 
 -- --------------------------------------------------------
 
