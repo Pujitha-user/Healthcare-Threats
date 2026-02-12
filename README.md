@@ -34,24 +34,21 @@ cd "Modeling, Detecting, and Mitigating Threats Against\Modeling_Detecting_and_M
 - MySQL Server
 - Virtual Environment (included in `env/` folder)
 
-## 🔐 Login Credentials
+## 🔐 Configuration
 
-### Database Credentials
+### Database Setup
 - **Host:** 127.0.0.1
 - **Port:** 3306
 - **Database:** modeling_detecting_and_mitigating_threats
-- **Username:** root
-- **Password:** Root@123
+- **Configure your database credentials in the Django settings file**
 
-### Service Provider Login
-- **URL:** http://127.0.0.1:8000/serviceproviderlogin/
-- **Username:** Admin
-- **Password:** Admin
+### Admin Access
+- **Service Provider URL:** http://127.0.0.1:8000/serviceproviderlogin/
+- **Default credentials are configured during initial setup**
 
-### Remote User Accounts (Pre-registered)
-1. **Username:** Rajesh | **Password:** Rajesh | **Email:** Rajesh123@gmail.com
-2. **Username:** Manjunath | **Password:** Manjunath | **Email:** tmksmanju13@gmail.com
-3. **Username:** tmksmanju | **Password:** tmksmanju | **Email:** tmksmanju13@gmail.com
+### User Registration
+- New users can register through the application
+- Pre-registered test accounts are available for development
 
 ## 📦 Dependencies
 
