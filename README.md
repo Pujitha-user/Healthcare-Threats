@@ -34,23 +34,25 @@ cd "Modeling, Detecting, and Mitigating Threats Against\Modeling_Detecting_and_M
 - MySQL Server
 - Virtual Environment (included in `env/` folder)
 
-## 🔐 Configuration
+## 🔐 Login Credentials
 
 ### Database Setup
 - **Host:** 127.0.0.1
 - **Port:** 3306
 - **Database:** modeling_detecting_and_mitigating_threats
-- **Configure your database credentials in the Django settings file**
+- **Username:** your user name
+- **Password:** your password
 
-### Admin Access
-- **Service Provider URL:** http://127.0.0.1:8000/serviceproviderlogin/
-- **Default credentials are configured during initial setup**
+### Service Provider Login
+- **URL:** http://127.0.0.1:8000/serviceproviderlogin/
+- **Username:** ****
+- **Password:** ****
 
 ### User Registration
 - New users can register through the application
 - Pre-registered test accounts are available for development
 
-## 📦 Dependencies
+##  Dependencies
 
 The project uses the following main packages:
 - Django 3.2.25
@@ -61,7 +63,7 @@ The project uses the following main packages:
 - mysqlclient 2.2.7
 - joblib 1.5.3
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 C:\Modeling\
@@ -81,7 +83,7 @@ C:\Modeling\
             └── Template/                  # HTML templates
 ```
 
-## ⚙️ Important Notes
+##  Important Notes
 
 1. **MySQL must be running** before starting the Django server
 2. The virtual environment is located at: `C:\Modeling\env\`
@@ -89,7 +91,7 @@ C:\Modeling\
 4. Press `Ctrl+C` in the terminal to stop the server
 5. Registration issue has been fixed - new users will now register successfully
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 ### Server doesn't start
 - Check if MySQL is running
@@ -101,7 +103,7 @@ C:\Modeling\
 - Always activate virtual environment first
 - Use full path: `C:\Modeling\env\Scripts\python.exe`
 
-## 📝 Features
+##  Features
 
 - Healthcare threat detection using machine learning
 - User authentication and authorization
@@ -110,13 +112,13 @@ C:\Modeling\
 - Data analysis and visualization
 - Threat modeling and mitigation strategies
 
-## 📄 License
+##  License
 
 This project is for educational and research purposes.
 
-## 👥 Contributors
+##  Contributors
 
-Developed for healthcare cybersecurity research and threat analysis.
+Vangala Pujitha
 
 ---
 
