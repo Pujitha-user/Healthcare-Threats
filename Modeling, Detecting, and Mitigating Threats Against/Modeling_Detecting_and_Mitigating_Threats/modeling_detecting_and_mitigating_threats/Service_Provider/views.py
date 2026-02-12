@@ -8,7 +8,6 @@ import datetime
 import xlwt
 from django.http import HttpResponse
 import numpy as np
-import os
 import secrets
 
 import pandas as pd
@@ -28,8 +27,12 @@ def serviceproviderlogin(request):
     # with Django's built-in authentication system using proper password hashing,
     # session management, and CSRF protection.
     if request.method  == "POST":
-        admin = request.POST.get('username')
-        password = request.POST.get('password')
+        admin = request.POST.get('username', '')
+        password = request.POST.get('password', '')
+        
+        # Validate inputs before comparison
+        if not admin or not password:
+            return render(request,'SProvider/serviceproviderlogin.html')
         
         # Use timing-attack-resistant comparison
         username_match = secrets.compare_digest(admin, settings.ADMIN_USERNAME)

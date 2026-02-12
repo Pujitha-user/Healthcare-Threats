@@ -69,7 +69,8 @@ WSGI_APPLICATION = 'modeling_detecting_and_mitigating_threats.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 # Get database configuration from environment variables
-# These MUST be set before running the application
+# DB_PASSWORD MUST be set before running the application
+# Other fields have sensible defaults but can be overridden via environment variables
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
 if not DB_PASSWORD:
     raise ValueError("DB_PASSWORD environment variable must be set")
